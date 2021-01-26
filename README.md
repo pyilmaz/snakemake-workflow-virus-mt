@@ -26,11 +26,11 @@ Configure the workflow according to your needs via editing the files under `conf
 
 Test your configuration by performing a dry-run via
 
-    snakemake --use-conda -n
+    snakemake --use-conda --conda-frontend mamba -n
 
 Execute the workflow locally via
 
-    snakemake --use-conda --cores $N --resources ncbi_api_requests=1
+    snakemake --use-conda --conda-frontend mamba --cores $N --resources ncbi_api_requests=1
 
 using `$N` cores.
 Non-local execution can be done via Snakemake's extensive cluster and cloud support, see the [Snakemake documentation](https://snakemake.readthedocs.io/en/stable/executable.html).
