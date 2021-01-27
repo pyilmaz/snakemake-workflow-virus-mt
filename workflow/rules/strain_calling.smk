@@ -104,4 +104,4 @@ rule pangolin:
     conda:
         "../envs/pangolin.yaml"
     shell:
-        "pangolin {input} --outfile {output} 2> {log}"
+        "pangolin {input} --outfile {output} > {log} 2>&1"
