@@ -75,11 +75,7 @@ rule plot_strains_kallisto:
         "../notebooks/plot-strains.py.ipynb"
 
 
-<<<<<<< HEAD
 rule plot_all_strains_kallisto:
-=======
-rule plot_all_strains:
->>>>>>> master
     input:
         expand("results/tables/strain-calls/{sample}.strains.tsv", sample=get_samples()),
     output:
