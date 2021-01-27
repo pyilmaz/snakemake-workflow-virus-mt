@@ -40,11 +40,11 @@ rule kallisto_quant:
         "0.70.0/bio/kallisto/quant"
 
 
-rule call_strains:
+rule call_strains_kallisto:
     input:
         "results/quant/{sample}",
     output:
-        "results/tables/strain-calls/{sample}.strains.tsv",
+        "results/tables/strain-calls/{sample}.strains.kallisto.tsv",
     log:
         "logs/call-strains/{sample}.log",
     params:
@@ -55,12 +55,12 @@ rule call_strains:
         "../notebooks/call-strains.py.ipynb"
 
 
-rule plot_strains:
+rule plot_strains_kallisto:
     input:
-        "results/tables/strain-calls/{sample}.strains.tsv",
+        "results/tables/strain-calls/{sample}.strains.kallisto.tsv",
     output:
         report(
-            "results/plots/strain-calls/{sample}.strains.svg",
+            "results/plots/strain-calls/{sample}.strains.kallisto.svg",
             caption="../report/strain-calls.rst",
             category="Strain calls",
             subcategory="Per sample",
@@ -75,7 +75,7 @@ rule plot_strains:
         "../notebooks/plot-strains.py.ipynb"
 
 
-rule plot_all_strains:
+rule plot_all_strains_kallisto:
     input:
         expand("results/tables/strain-calls/{sample}.strains.tsv", sample=get_samples()),
     output:
@@ -93,5 +93,15 @@ rule plot_all_strains:
         "../notebooks/plot-all-strains.py.ipynb"
 
 
-# TODO
-# 1. the entrez rule get_genome also downloads partial reads of covid genomes (e.g. MW368461) or empty genome files (e.g. MW454604). Add rule to exiculde those rules "faulty" covid genomes
+rule pangolin:
+    input:
+        "results/assembly/{sample}/final.contigs.fa",
+    output:
+        "results/tables/strain-calls/{sample}.strains.pangolin.csv",
+    log:
+        "logs/pangolin/{sample}.log",
+    threads: 8
+    conda:
+        "../envs/pangolin.yaml"
+    shell:
+        "pangolin {input} --outfile {output} 2> {log}"

@@ -24,11 +24,21 @@ rule all:
         "results/qc/multiqc.html",
         # expand("results/vcf-report/{target}", target=["all"] + get_samples()),  # TODO activate once report properly handles intergenic variants.
         expand("results/calls/{sample}.bcf", sample=get_samples()),
-        expand("results/tables/strain-calls/{sample}.strains.tsv", sample=get_samples()),
-        expand("results/plots/strain-calls/{sample}.strains.svg", sample=get_samples()),
         expand(
             "results/plots/strain-calls/all.{mode}-strain.strains.svg",
             mode=["major", "any"],
+        ),
+        expand(
+            "results/tables/strain-calls/{sample}.strains.kallisto.tsv",
+            sample=get_samples(),
+        ),
+        expand(
+            "results/tables/strain-calls/{sample}.strains.pangolin.csv",
+            sample=get_samples(),
+        ),
+        expand(
+            "results/plots/strain-calls/{sample}.strains.kallisto.svg",
+            sample=get_samples(),
         ),
 
 
