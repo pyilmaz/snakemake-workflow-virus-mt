@@ -12,4 +12,8 @@ rule assembly:
     conda:
         "../envs/megahit.yaml"
     shell:
-        "rm -r {params.outdir}; megahit -1 {input.fastq1} -2 {input.fastq2} -o {params.outdir} 2> {log}"
+        "rm -r {params.outdir}; megahit --min-contig-len 20000 -1 {input.fastq1} -2 {input.fastq2} -o {params.outdir} 2> {log}"
+
+# TODO remove min config len threshold, and rather filter out the largest contig in a subsequent step
+# TODO add plot that visualizes assembly quality
+# TODO blast smaller contigs to determine contamination?
