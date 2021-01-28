@@ -22,15 +22,12 @@ include: "rules/benchmarking.smk"
 rule all:
     input:
         "results/qc/multiqc.html",
+        "results/plots/strain-calls/all.strains.pangolin.svg",
         expand("results/vcf-report/{target}", target=["all"] + get_samples()),  # TODO activate once report properly handles intergenic variants.
         expand("results/calls/{sample}.bcf", sample=get_samples()),
         expand(
-            "results/plots/strain-calls/all.{mode}-strain.strains.svg",
+            "results/plots/strain-calls/all.{mode}-strain.strains.kallisto.svg",
             mode=["major", "any"],
-        ),
-        expand(
-            "results/tables/strain-calls/{sample}.strains.kallisto.tsv",
-            sample=get_samples(),
         ),
         expand(
             "results/tables/strain-calls/{sample}.strains.pangolin.csv",
