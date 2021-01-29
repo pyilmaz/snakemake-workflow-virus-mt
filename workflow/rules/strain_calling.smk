@@ -78,7 +78,7 @@ rule plot_all_strains_kallisto:
     input:
         expand(
             "results/tables/strain-calls/{sample}.strains.kallisto.tsv",
-            sample=get_samples()
+            sample=get_samples(),
         ),
     output:
         report(
