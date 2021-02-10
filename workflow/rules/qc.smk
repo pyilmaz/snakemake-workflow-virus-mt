@@ -41,10 +41,8 @@ rule multiqc:
             sample=get_samples(),
         ),
         expand("results/trimmed/{sample}.fastp.json", sample=get_samples()),
-        expand("results/quast/{sample}/report.tsv", sample=get_samples()),
-        expand(
-            "results/qc/samtools_flagstat/{sample}.bam.flagstat", sample=get_samples()
-        ),
+        expand("results/quast/{sample}/report.tsv.before", sample=get_samples()),
+        expand("results/quast-after/{sample}/report.tsv.after", sample=get_samples()),
     output:
         "results/qc/multiqc.html",
     params:

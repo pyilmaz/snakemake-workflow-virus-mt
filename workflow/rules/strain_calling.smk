@@ -117,7 +117,7 @@ rule plot_strains_pangolin:
 
 rule pangolin:
     input:
-        "results/polished-contigs/{sample}.fasta",
+        "results/ordered-contigs/{sample}.fasta",
     output:
         "results/tables/strain-calls/{sample}.strains.pangolin.csv",
     log:

@@ -1,7 +1,9 @@
 channels:
   - conda-forge
+  - bioconda
+  - default
 dependencies:
-  - python =3.9
+  - python =3.8.6
   - pandas =1.2
   - jupyter =1.0
   - altair =4.1

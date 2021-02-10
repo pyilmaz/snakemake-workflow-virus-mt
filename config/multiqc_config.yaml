@@ -32,9 +32,13 @@ module_order:
   - quast:
       name: "Contigs (assembly)"
       target: "Quast"
-  # - quast:
-      # name: "Contigs (consensus)"
-      # target: "Quast"
+      path_filters:
+        - "report.tsv.before"
+  - quast:
+      name: "Contigs (consensus)"
+      target: "Quast"
+      path_filters:
+        - "report.tsv.after"
 
 # sample name cleaning
 fn_clean_exts:
@@ -46,3 +50,5 @@ fn_clean_exts:
   - ".trimmed"
   - ".fastq"
   - ".gz"
+  - ".before"
+  - ".after"
