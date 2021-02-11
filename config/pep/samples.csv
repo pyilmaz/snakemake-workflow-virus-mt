@@ -19,7 +19,6 @@ sample_name,fq1,fq2
 18-29786,/vol/compute/sars-cov-2/raw/Covid-Genom_MiSeq120121/18-29786_S18_L001_R1_001.fastq.gz,/vol/compute/sars-cov-2/raw/Covid-Genom_MiSeq120121/18-29786_S18_L001_R2_001.fastq.gz
 19-30886,/vol/compute/sars-cov-2/raw/Covid-Genom_MiSeq120121/19-30886_S19_L001_R1_001.fastq.gz,/vol/compute/sars-cov-2/raw/Covid-Genom_MiSeq120121/19-30886_S19_L001_R2_001.fastq.gz
 20-39263,/vol/compute/sars-cov-2/raw/Covid-Genom_MiSeq120121/20-39263_S20_L001_R1_001.fastq.gz,/vol/compute/sars-cov-2/raw/Covid-Genom_MiSeq120121/20-39263_S20_L001_R2_001.fastq.gz
-21-67870,/vol/compute/sars-cov-2/raw/Covid-Genom_MiSeq120121/21-67870_S21_L001_R1_001.fastq.gz,/vol/compute/sars-cov-2/raw/Covid-Genom_MiSeq120121/21-67870_S21_L001_R2_001.fastq.gz
 22-67922,/vol/compute/sars-cov-2/raw/Covid-Genom_MiSeq120121/22-67922_S22_L001_R1_001.fastq.gz,/vol/compute/sars-cov-2/raw/Covid-Genom_MiSeq120121/22-67922_S22_L001_R2_001.fastq.gz
 23-74170,/vol/compute/sars-cov-2/raw/Covid-Genom_MiSeq120121/23-74170_S23_L001_R1_001.fastq.gz,/vol/compute/sars-cov-2/raw/Covid-Genom_MiSeq120121/23-74170_S23_L001_R2_001.fastq.gz
 24-75298,/vol/compute/sars-cov-2/raw/Covid-Genom_MiSeq120121/24-75298_S24_L001_R1_001.fastq.gz,/vol/compute/sars-cov-2/raw/Covid-Genom_MiSeq120121/24-75298_S24_L001_R2_001.fastq.gz
