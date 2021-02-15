@@ -53,8 +53,8 @@ rule call_strains_kallisto:
         min_fraction=config["strain-calling"]["min-fraction"],
     conda:
         "../envs/python.yaml"
-    notebook:
-        "../notebooks/call-strains.py.ipynb"
+    script:
+        "../scripts/call-strains.py"
 
 
 rule plot_strains_kallisto:
@@ -72,8 +72,8 @@ rule plot_strains_kallisto:
         min_fraction=config["strain-calling"]["min-fraction"],
     conda:
         "../envs/python.yaml"
-    notebook:
-        "../notebooks/plot-strains-kallisto.py.ipynb"
+    script:
+        "../scripts/plot-strains-kallisto.py"
 
 
 rule plot_all_strains_kallisto:
@@ -93,8 +93,8 @@ rule plot_all_strains_kallisto:
         "logs/plot-strains/all.{mode}.log",
     conda:
         "../envs/python.yaml"
-    notebook:
-        "../notebooks/plot-all-strains-kallisto.py.ipynb"
+    script:
+        "../scripts/plot-all-strains-kallisto.py"
 
 
 rule plot_strains_pangolin:
@@ -111,8 +111,8 @@ rule plot_strains_pangolin:
         "logs/plot-strains-pangolin/{sample}.log",
     conda:
         "../envs/python.yaml"
-    notebook:
-        "../notebooks/plot-strains-pangolin.py.ipynb"
+    script:
+        "../scripts/plot-strains-pangolin.py"
 
 
 rule pangolin:
@@ -146,5 +146,5 @@ rule plot_all_strains_pangolin:
         "logs/plot-strains-pangolin/all.log",
     conda:
         "../envs/python.yaml"
-    notebook:
-        "../notebooks/plot-all-strains-pangolin.py.ipynb"
+    script:
+        "../scripts/plot-all-strains-pangolin.py"
